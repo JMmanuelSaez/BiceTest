@@ -1,4 +1,15 @@
 <p>Listar Valor del Dólar según Fecha</p>
+<div style="display: block;">
+  <canvas *ngIf="!loading"
+          baseChart
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins">
+  </canvas>
+</div>
 <ul>
   <li *ngFor="let fila of dolar;">
     {{fila.fecha}} - {{fila.valor}}
