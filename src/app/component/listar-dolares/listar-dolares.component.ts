@@ -27,7 +27,7 @@ export class ListarDolaresComponent implements OnInit {
         var i = 0;
         arregloDolar.forEach(
           function (elemento) {
-            arregloDolarObj[i] = { fecha: elemento[0], valor: elemento[1] };
+            arregloDolarObj[i] = { fecha: new Date(Number(elemento[0])*1000).toLocaleDateString('es-CL'), valor: elemento[1] };
             i++;
           }
         )
