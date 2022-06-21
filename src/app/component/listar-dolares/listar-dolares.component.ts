@@ -8,6 +8,8 @@ import { Dolar } from 'src/app/models/dolar.model';
 })
 export class ListarDolaresComponent implements OnInit {
 
+  dolar?: Dolar[];
+  
   constructor(private dolaresService: DolaresService) { }
 
   ngOnInit(): void
@@ -16,11 +18,20 @@ export class ListarDolaresComponent implements OnInit {
   }
   getDolares(): void
   {
-    console.log('JMA');
     this.dolaresService.obtenerDolar().subscribe(
       data =>
       {
-        console.log(data);
+        var lista = data.values;
+        var arregloDolar = Object.entries(lista);
+        var arregloDolarObj = new Array;
+        var i = 0;
+        arregloDolar.forEach(
+          function (elemento) {
+            arregloDolarObj[i] = { fecha: elemento[0], valor: elemento[1] };
+            i++;
+          }
+        )
+        this.dolar = arregloDolarObj;
       }
     );
   }
