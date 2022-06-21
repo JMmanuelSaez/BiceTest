@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\component",
+    "\\src\\app\\component\\listar-dolares",
+    "\\src\\app\\models",
+    "\\src\\app\\service"
+  ],
+  "SelectedNode": "\\src\\app\\service\\dolares.service.ts",
+  "PreviewInSolutionExplorer": false
+}
