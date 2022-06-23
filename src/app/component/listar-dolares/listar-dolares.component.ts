@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DolaresService } from 'src/app/service/dolares.service';
 import { Dolar } from 'src/app/models/dolar.model';
-import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import { ChartDataSets, ChartType } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 
 @Component({
@@ -35,18 +35,17 @@ export class ListarDolaresComponent implements OnInit {
         var i = 0;
         arregloDolar.forEach(
           function (elemento) {
-            //arregloDolarObj[i] = { fecha: new Date(Number(elemento[0]) * 1000).toLocaleDateString('es-CL'), valor: elemento[1] };
             dolarFechas[i] = new Date(Number(elemento[0]) * 1000).toLocaleDateString('es-CL');
             dolarValores[i] = elemento[1];
 
             i++;
           }
         )
-        this.dolar = arregloDolarObj;
-        this.dolarFecha = dolarFechas;
-        this.dolarValor = dolarValores;
+          this.dolar = arregloDolarObj;
+          this.dolarFecha = dolarFechas;
+          this.dolarValor = dolarValores;
 
-        this.lineChartData = [{ data: this.dolarValor, label: 'Dolar' }];
+        this.lineChartData = [{ data: this.dolarValor, label: 'VARIACION DOLAR EN PESOS CHILENOS ENTRE ENERO 2019 y AGOSTO 2020' }];
         this.lineChartLabels = this.dolarFecha;
         this.loading = false;
 
