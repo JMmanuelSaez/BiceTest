@@ -13,9 +13,9 @@ Se realiza análisis de vulnerabilidades en sitio Snyk https://snyk.io/test/
 
 ## Pasos para instalación
 
-Clonar el proyecto desde https://github.com/JMmanuelSaez/BiceTest
-npm install
-ng serve
+* Clonar el proyecto desde https://github.com/JMmanuelSaez/BiceTest
+* npm install --force
+* ng serve
 
 ## Test unitario
 
