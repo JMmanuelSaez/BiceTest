@@ -29,7 +29,6 @@ export class ListarDolaresComponent implements OnInit {
       {
         var lista = data.values;
         var arregloDolar = Object.entries(lista);
-        var arregloDolarObj = new Array;
         var dolarFechas = new Array;
         var dolarValores = new Array;
         var i = 0;
@@ -41,7 +40,6 @@ export class ListarDolaresComponent implements OnInit {
             i++;
           }
         )
-          this.dolar = arregloDolarObj;
           this.dolarFecha = dolarFechas;
           this.dolarValor = dolarValores;
 
