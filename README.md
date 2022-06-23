@@ -1,4 +1,4 @@
-# TeTest de programación - Banco Bice Lab
+# Test de programación - Banco Bice Lab
 
 El proyecto ha sido desarrollado utilizando Angular versión 14, ejecutado sobre Nodejs versión 16.15.1.
 
@@ -8,17 +8,15 @@ el comportamiento del valor del Dólar desde enero de 2019 hasta agosto de 2020
 
 ## Respecto a la funcionalidad
 
-- Presenta los datos relacionados al Dolar en un gráfico lineal, valor y fecha
-- Control de errores
-- Test utilizando
-- Se realiza análisis de vulnerabilidades en sitio Synk
+Presenta los datos relacionados al Dolar en un gráfico lineal, valor y fecha, utilizando la librería ng2-charts
+Se realiza análisis de vulnerabilidades en sitio Snyk https://snyk.io/test/
 
 ## Pasos para instalación
 
-1. Clonar el proyecto desde https://github.com/JMmanuelSaez/BiceTest
-2. npm install
-3. ng serve
+Clonar el proyecto desde https://github.com/JMmanuelSaez/BiceTest
+npm install
+ng serve
 
 ## Test unitario
 
-- 
+ng test

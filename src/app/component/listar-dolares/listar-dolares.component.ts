@@ -15,6 +15,18 @@ export class ListarDolaresComponent implements OnInit {
   dolarFecha = new Array;
   dolarValor = new Array;
   loading = true;
+  lineChartData: ChartDataSets[] = [{ data: this.dolarValor, label: 'Dolar' }];
+  lineChartLabels: Label[] = this.dolarFecha;
+  lineChartColors: Color[] = [
+    {
+      borderColor: 'black',
+      backgroundColor: 'rgba(255,0,0,0.3)',
+    },
+  ];
+
+  lineChartLegend = true;
+  lineChartType: ChartType = 'line';
+  lineChartPlugins = [];
   
   constructor(private dolaresService: DolaresService) { }
 
@@ -28,13 +40,11 @@ export class ListarDolaresComponent implements OnInit {
       data =>
       {
         var arregloDolar = this.transformaData(data.values);
-        console.log(arregloDolar)
         this.ordenarData(arregloDolar);
         this.lineChartData = [{ data: this.dolarValor, label: 'VARIACION DOLAR EN PESOS CHILENOS ENTRE ENERO 2019 y AGOSTO 2020' }];
         this.lineChartLabels = this.dolarFecha;
         this.loading = false;
 
-        console.log(this.dolarValor);
       }
     );
   }
@@ -58,16 +68,5 @@ export class ListarDolaresComponent implements OnInit {
     this.dolarValor = dolarValores;
   }
 
-  public lineChartData: ChartDataSets[] = [{ data: this.dolarValor, label: 'Dolar' }];
-  public lineChartLabels: Label[] = this.dolarFecha;
-  public lineChartColors: Color[] = [
-    {
-      borderColor: 'black',
-      backgroundColor: 'rgba(255,0,0,0.3)',
-    },
-  ];
 
-  public lineChartLegend = true;
-  public lineChartType: ChartType = 'line';
-  public lineChartPlugins = [];
 }
