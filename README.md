@@ -1,27 +1,24 @@
-# BiceTest
+# TeTest de programación - Banco Bice Lab
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+El proyecto ha sido desarrollado utilizando Angular versión 14, ejecutado sobre Nodejs versión 16.15.1.
 
-## Development server
+La aplicación es capaz de obtener los datos relacionados al Dólar desde la 
+API https://www.indecon.space/values/dolar y presenta en un gráfico lineal, 
+el comportamiento del valor del Dólar desde enero de 2019 hasta agosto de 2020
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Respecto a la funcionalidad
 
-## Code scaffolding
+- Presenta los datos relacionados al Dolar en un gráfico lineal, valor y fecha
+- Control de errores
+- Test utilizando
+- Se realiza análisis de vulnerabilidades en sitio Synk
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Pasos para instalación
 
-## Build
+1. Clonar el proyecto desde https://github.com/JMmanuelSaez/BiceTest
+2. npm install
+3. ng serve
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Test unitario
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- 

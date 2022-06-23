@@ -27,22 +27,9 @@ export class ListarDolaresComponent implements OnInit {
     this.dolaresService.obtenerDolar().subscribe(
       data =>
       {
-        var lista = data.values;
-        var arregloDolar = Object.entries(lista);
-        var dolarFechas = new Array;
-        var dolarValores = new Array;
-        var i = 0;
-        arregloDolar.forEach(
-          function (elemento) {
-            dolarFechas[i] = new Date(Number(elemento[0]) * 1000).toLocaleDateString('es-CL');
-            dolarValores[i] = elemento[1];
-
-            i++;
-          }
-        )
-          this.dolarFecha = dolarFechas;
-          this.dolarValor = dolarValores;
-
+        var arregloDolar = this.transformaData(data.values);
+        console.log(arregloDolar)
+        this.ordenarData(arregloDolar);
         this.lineChartData = [{ data: this.dolarValor, label: 'VARIACION DOLAR EN PESOS CHILENOS ENTRE ENERO 2019 y AGOSTO 2020' }];
         this.lineChartLabels = this.dolarFecha;
         this.loading = false;
@@ -50,6 +37,25 @@ export class ListarDolaresComponent implements OnInit {
         console.log(this.dolarValor);
       }
     );
+  }
+
+  transformaData(resp: any) {
+    return Object.entries(resp);
+  }
+
+  ordenarData(datos: any) {
+    var dolarFechas = new Array;
+    var dolarValores = new Array;
+    var i = 0;
+    datos.forEach(
+      function (elemento: any) {
+        dolarFechas[i] = new Date(Number(elemento[0]) * 1000).toLocaleDateString('es-CL');
+        dolarValores[i] = elemento[1];
+        i++;
+      }
+    )
+    this.dolarFecha = dolarFechas;
+    this.dolarValor = dolarValores;
   }
 
   public lineChartData: ChartDataSets[] = [{ data: this.dolarValor, label: 'Dolar' }];

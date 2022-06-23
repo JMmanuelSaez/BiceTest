@@ -1,8 +1,7 @@
-<p>Listar Valor del Dólar según Fecha</p>
-<div style="display: block;">
-  <canvas *ngIf="!loading" 
+<p></p>
+<div style="display: block; width:80%; height:80%;">
+  <canvas *ngIf="!loading"
           baseChart
-          width="50" height="20"
           [datasets]="lineChartData"
           [labels]="lineChartLabels"
           [colors]="lineChartColors"
